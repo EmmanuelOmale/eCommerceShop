@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationCore.CartAggregate
+namespace ApplicationCore.Entities.CartAggregate
 {
     public class Cart : BaseEntity
     {
@@ -20,7 +20,7 @@ namespace ApplicationCore.CartAggregate
 
         public void AddItem(int catalogItemId, decimal unitPrice, int quantity = 1)
         {
-            if(!Items.Any(i => i.CatalogItemId == catalogItemId))
+            if (!Items.Any(i => i.CatalogItemId == catalogItemId))
             {
                 _items.Add(new CartItem(catalogItemId, quantity, unitPrice));
                 return;
@@ -39,5 +39,5 @@ namespace ApplicationCore.CartAggregate
             BuyerId = buyerId;
         }
     }
-    
+
 }

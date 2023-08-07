@@ -1,13 +1,13 @@
 ﻿using Ardalis.GuardClauses;
 
-namespace ApplicationCore
+namespace ApplicationCore.Entities
 {
-    public  class CatalogItem : BaseEntity
+    public class CatalogItem : BaseEntity
     {
         public string Name { get; private set; }
         public string Description { get; private set; }
-        public decimal Price { get; private set; }  
-        public string PictureUri { get; private set; }  
+        public decimal Price { get; private set; }
+        public string PictureUri { get; private set; }
         public int CatalogTypeId { get; private set; }
         public CatalogType? CatalogType { get; private set; }
         public int CatalogBrandId { get; private set; }
@@ -45,15 +45,15 @@ namespace ApplicationCore
             CatalogBrandId = catalogBrandId;
         }
 
-        public void UpdateType(int catalogTypeId )
+        public void UpdateType(int catalogTypeId)
         {
             Guard.Against.Zero(catalogTypeId, nameof(catalogTypeId));
             CatalogTypeId = catalogTypeId;
         }
 
-        public void UpdatePictureUri(string  pictureName)
+        public void UpdatePictureUri(string pictureName)
         {
-            if(string.IsNullOrEmpty(pictureName))
+            if (string.IsNullOrEmpty(pictureName))
             {
                 PictureUri = string.Empty;
                 return;
@@ -64,7 +64,7 @@ namespace ApplicationCore
         public readonly record struct CatalogItemDetails
         {
             public string? Name { get; }
-            public string? Description { get; } 
+            public string? Description { get; }
             public decimal Price { get; }
 
             public CatalogItemDetails(string? name, string? description, decimal price)

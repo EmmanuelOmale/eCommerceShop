@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationCore.BuyerAggregate
+namespace ApplicationCore.Entities.BuyerAggregate
 {
     public class Buyer : BaseEntity
     {
@@ -15,8 +15,8 @@ namespace ApplicationCore.BuyerAggregate
 
         public IEnumerable<PaymentMethod> Payment => _paymentMethods.AsReadOnly();
 
-        #pragma warning disable CS8618
-        private Buyer()  { }
+#pragma warning disable CS8618
+        private Buyer() { }
 
         public Buyer(string identity) : this()
         {

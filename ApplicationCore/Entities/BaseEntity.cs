@@ -1,4 +1,4 @@
-﻿namespace ApplicationCore
+﻿namespace ApplicationCore.Entities
 {
     public abstract class BaseEntity
     {

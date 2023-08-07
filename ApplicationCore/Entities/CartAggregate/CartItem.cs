@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationCore.CartAggregate
+namespace ApplicationCore.Entities.CartAggregate
 {
     public class CartItem : BaseEntity
     {
         public decimal UnitPrice { get; set; }
-        public int Quantity { get; set; }   
+        public int Quantity { get; set; }
         public int CatalogItemId { get; set; }
         public int CartId { get; set; }
 
