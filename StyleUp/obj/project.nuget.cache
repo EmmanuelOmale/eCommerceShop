@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "b8piBtbb5x8Gkijq1IUqOcOoJ2pTf2ppcimfj3yvtZNND5zSfGCDXfOGcl5hq/62YaesdRkXSE0NyFqEJdHy7A==",
+  "dgSpecHash": "I0GtReKtgENubOXHWd7/N1h4lTgy8boXWsonGI/ADnDaPi390GSxBHsQ6FaMCjpv131u8r1YYZBPtHg34Say2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\source\\repos\\StyleUp\\StyleUp\\StyleUp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\ardalis.result\\7.1.0\\ardalis.result.7.1.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",

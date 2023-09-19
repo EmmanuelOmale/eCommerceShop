@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Ardalis.Result/7.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Ardalis.Result.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ardalis.Result.dll": {}
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
         "type": "package",
         "build": {
@@ -92,6 +101,20 @@
     }
   },
   "libraries": {
+    "Ardalis.Result/7.1.0": {
+      "sha512": "pmZqOKXD6OGwNmp6CUy+iIsOaeZmY3wsk0IIYWJmJ5pRU2DCO0lbhGzlx5rrxyTOr1/h02K2VhJv5qLuECfWWw==",
+      "type": "package",
+      "path": "ardalis.result/7.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ardalis.result.7.1.0.nupkg.sha512",
+        "ardalis.result.nuspec",
+        "icon.png",
+        "lib/net7.0/Ardalis.Result.dll",
+        "lib/netstandard2.0/Ardalis.Result.dll"
+      ]
+    },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "sha512": "LH4OE/76F6sOCslif7+Xh3fS/wUUrE5ryeXAMcoCnuwOQGT5Smw0p57IgDh/pHgHaGz/e+AmEQb7pRgb++wt0w==",
       "type": "package",
@@ -220,6 +243,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Ardalis.Result >= 7.1.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -263,6 +287,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Ardalis.Result": {
+            "target": "Package",
+            "version": "[7.1.0, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.2.3, )"

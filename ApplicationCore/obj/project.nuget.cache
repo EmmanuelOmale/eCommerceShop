@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ijbQS5qvIGlhj5qD8KtbXN6v1EWgB32WRA2gdRl4yYjQ862f385Y8ueVqKkb6t9wWRb4Q7Oq9AJEzETm3lHFyg==",
+  "dgSpecHash": "cPk45W2+DfviLsKx9g95q+/YJ8cNEm3m7pVr3CZEP1iCIJb7Dy2zBoAP6VIf/j9kFMUHAsrRrjyJZqLwSAYsiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\source\\repos\\StyleUp\\ApplicationCore\\ApplicationCore.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\HP\\.nuget\\packages\\ardalis.guardclauses\\4.1.1\\ardalis.guardclauses.4.1.1.nupkg.sha512"
+    "C:\\Users\\HP\\.nuget\\packages\\ardalis.guardclauses\\4.1.1\\ardalis.guardclauses.4.1.1.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\ardalis.result\\7.1.0\\ardalis.result.7.1.0.nupkg.sha512"
   ],
   "logs": []
 }
