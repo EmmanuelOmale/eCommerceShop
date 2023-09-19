@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Ardalis.Result" Version="7.1.0" />
+    <PackageReference Include="Ardalis.Specification" Version="7.0.0" />
+  </ItemGroup>
+
 </Project>

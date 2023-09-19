@@ -12,6 +12,7 @@ namespace ApplicationCore.Interfaces
     {
         Task TransferCartAsync(string anonymousId, string userName);
         Task<Cart> AddItemToCart(string userName, int catalogItemId, decimal price, int quantity = 1);
-        Task<Result<Cart>>
+        Task<Result<Cart>> SetQuantities(int cartId, Dictionary<string, int> quantities);
+        Task DeleteCartAsyn(int cartId);
     }
 }
