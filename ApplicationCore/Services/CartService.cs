@@ -1,5 +1,7 @@
 ﻿using ApplicationCore.Entities.CartAggregate;
 using ApplicationCore.Interfaces;
+using ApplicationCore.Specifications;
+using Ardalis.GuardClauses;
 using Ardalis.Result;
 using System;
 using System.Collections.Generic;
@@ -16,14 +18,27 @@ namespace ApplicationCore.Services
         {
             _cartRepository = cartRepository;
         }
-        public Task<Cart> AddItemToCart(string userName, int catalogItemId, decimal price, int quantity = 1)
+        public async Task<Cart> AddItemToCart(string userName, int catalogItemId, decimal price, int quantity = 1)
         {
-            throw new NotImplementedException();
+            var cartSpec = new CartWithItemSpecification(userName);
+            var cart = await _cartRepository.FirstOrDefaultAsync(cartSpec);
+
+            if (cart == null)
+            {
+                cart = new Cart(userName);
+                await _cartRepository.AddAsync(cart);
+            }
+
+            cart.AddItem(catalogItemId, price, quantity);   
+            await _cartRepository.UpdateAsync(cart);
+            return cart;
         }
 
-        public Task DeleteCartAsyn(int cartId)
+        public async Task DeleteCartAsyn(int cartId)
         {
-            throw new NotImplementedException();
+            var cart = await _cartRepository.GetByIdAsync(cartId);
+            Guard.Against.Null(cart, nameof(cart));
+            await _cartRepository.DeleteAsync(cart);
         }
 
         public Task<Result<Cart>> SetQuantities(int cartId, Dictionary<string, int> quantities)
