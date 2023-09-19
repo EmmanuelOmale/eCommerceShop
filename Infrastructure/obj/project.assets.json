@@ -10,6 +10,19 @@
         "runtime": {
           "lib/netstandard2.0/Ardalis.Result.dll": {}
         }
+      },
+      "Ardalis.Specification/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Ardalis.Specification.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Ardalis.Specification.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     }
   },
@@ -27,11 +40,30 @@
         "lib/net7.0/Ardalis.Result.dll",
         "lib/netstandard2.0/Ardalis.Result.dll"
       ]
+    },
+    "Ardalis.Specification/7.0.0": {
+      "sha512": "e2bd6AN7V0FGOgmCq+srEPmz03PEIkESoyG/QKHxX76ezI13COvi/2WX09f1wLFKdex9gVqxCtNSBH9pvYFUVQ==",
+      "type": "package",
+      "path": "ardalis.specification/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ardalis.specification.7.0.0.nupkg.sha512",
+        "ardalis.specification.nuspec",
+        "icon.png",
+        "lib/net6.0/Ardalis.Specification.dll",
+        "lib/net6.0/Ardalis.Specification.pdb",
+        "lib/net6.0/Ardalis.Specification.xml",
+        "lib/netstandard2.0/Ardalis.Specification.dll",
+        "lib/netstandard2.0/Ardalis.Specification.pdb",
+        "lib/netstandard2.0/Ardalis.Specification.xml"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Ardalis.Result >= 7.1.0"
+      "Ardalis.Result >= 7.1.0",
+      "Ardalis.Specification >= 7.0.0"
     ]
   },
   "packageFolders": {
@@ -76,6 +108,10 @@
           "Ardalis.Result": {
             "target": "Package",
             "version": "[7.1.0, )"
+          },
+          "Ardalis.Specification": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           }
         },
         "imports": [

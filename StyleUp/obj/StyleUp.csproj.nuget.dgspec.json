@@ -45,6 +45,10 @@
               "target": "Package",
               "version": "[7.1.0, )"
             },
+            "Ardalis.Specification": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

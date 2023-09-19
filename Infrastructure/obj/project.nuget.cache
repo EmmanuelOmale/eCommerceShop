@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PYFxTXJEXd6nRo0FYvuiV7FtcQZ/0cLkHLnojbDQZCsdeZfDd4c93x1CShPZdSO7C/AisdlhQ6uil6ZOZ/jJVg==",
+  "dgSpecHash": "4sZHLLaB5zNtQqE6bY4i9EDzlwtHRWlrE50FpWcxuVrbL1oYI2jck2hs2YBgyPraMchoNwDMm5b88yVbzn/p+g==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\source\\repos\\StyleUp\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\HP\\.nuget\\packages\\ardalis.result\\7.1.0\\ardalis.result.7.1.0.nupkg.sha512"
+    "C:\\Users\\HP\\.nuget\\packages\\ardalis.result\\7.1.0\\ardalis.result.7.1.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\ardalis.specification\\7.0.0\\ardalis.specification.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -47,6 +47,10 @@
             "Ardalis.Result": {
               "target": "Package",
               "version": "[7.1.0, )"
+            },
+            "Ardalis.Specification": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
