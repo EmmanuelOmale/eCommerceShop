@@ -3,20 +3,18 @@ using ApplicationCore.Interfaces;
 using ApplicationCore.Specifications;
 using Ardalis.GuardClauses;
 using Ardalis.Result;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ApplicationCore.Services
 {
     public class CartService : ICartService
     {
         private readonly IRepository<Cart> _cartRepository;
-        public CartService(IRepository<Cart> cartRepository)
+        private readonly IAppLogger<CartService> _logger;
+
+        public CartService(IRepository<Cart> cartRepository, IAppLogger<CartService> logger)
         {
             _cartRepository = cartRepository;
+            _logger = logger;
         }
         public async Task<Cart> AddItemToCart(string userName, int catalogItemId, decimal price, int quantity = 1)
         {
@@ -41,9 +39,24 @@ namespace ApplicationCore.Services
             await _cartRepository.DeleteAsync(cart);
         }
 
-        public Task<Result<Cart>> SetQuantities(int cartId, Dictionary<string, int> quantities)
+        public async Task<Result<Cart>> SetQuantities(int cartId, Dictionary<string, int> quantities)
         {
-            throw new NotImplementedException();
+            var cartSpec = new CartWithItemSpecification(cartId);
+            var cart = await _cartRepository.FirstOrDefaultAsync(cartSpec);
+            if (cart == null) return Result<Cart>.NotFound();
+
+            foreach(var item in cart.Items)
+            {
+                if (quantities.TryGetValue(item.Id.ToString(), out var quantity))
+                {
+                    if (_logger != null) _logger.LoggingInformation($"Updating quantity of item ID:{item.Id} to {quantity}.");
+                    item.SetQuantity(quantity);
+                }
+            }
+
+            cart.RemoveEmptyItems();
+            await _cartRepository.UpdateAsync(cart);
+            return cart;
         }
 
         public Task TransferCartAsync(string anonymousId, string userName)

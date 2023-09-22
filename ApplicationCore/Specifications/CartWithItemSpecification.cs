@@ -3,7 +3,7 @@ using Ardalis.Specification;
 
 namespace ApplicationCore.Specifications
 {
-    public sealed class CartWithItemSpecification : Specification<Cart>, ISingleResultSpecification
+    public sealed class CartWithItemSpecification : Specification<Cart>, ISingleResultSpecification<Cart>
     {
         public CartWithItemSpecification(int cartId)
         {
