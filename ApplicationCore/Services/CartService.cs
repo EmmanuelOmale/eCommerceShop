@@ -59,9 +59,24 @@ namespace ApplicationCore.Services
             return cart;
         }
 
-        public Task TransferCartAsync(string anonymousId, string userName)
+        public async Task TransferCartAsync(string anonymousId, string userName)
         {
-            throw new NotImplementedException();
+            var anonymousCartSpec = new CartWithItemSpecification(anonymousId);
+            var anonymousCart = await _cartRepository.FirstOrDefaultAsync(anonymousCartSpec);
+            if (anonymousCart == null) return;
+            var userCartSpec = new CartWithItemSpecification(userName);
+            var userCart = await _cartRepository.FirstOrDefaultAsync(userCartSpec);
+            if (userCart == null)
+            {
+                userCart = new Cart(userName);
+                await _cartRepository.AddAsync(userCart);
+            }
+            foreach(var item in anonymousCart.Items)
+            {
+                userCart.AddItem(item.CatalogItemId, item.UnitPrice, item.Quantity);
+            }
+            await _cartRepository.UpdateAsync(userCart);    
+            await _cartRepository.DeleteAsync(anonymousCart);
         }
     }
 }
