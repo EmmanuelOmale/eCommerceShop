@@ -1,4 +1,5 @@
-﻿using Ardalis.GuardClauses;
+﻿using ApplicationCore.Interfaces;
+using Ardalis.GuardClauses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities.OrderAggregate
 {
-    public class Order : BaseEntity
+    public class Order : BaseEntity, IAggregateRoot
     {
 
 #pragma warning disable CS8618
