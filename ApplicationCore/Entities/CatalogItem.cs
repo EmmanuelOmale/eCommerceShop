@@ -1,8 +1,9 @@
-﻿using Ardalis.GuardClauses;
+﻿using ApplicationCore.Interfaces;
+using Ardalis.GuardClauses;
 
 namespace ApplicationCore.Entities
 {
-    public class CatalogItem : BaseEntity
+    public class CatalogItem : BaseEntity, IAggregateRoot
     {
         public string Name { get; private set; }
         public string Description { get; private set; }
